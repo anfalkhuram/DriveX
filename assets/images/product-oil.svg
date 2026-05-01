@@ -1,9 +1,0 @@
-<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="640" height="480" rx="36" fill="#E2E8F0"/>
-  <rect x="48" y="48" width="544" height="384" rx="28" fill="#0F172A"/>
-  <rect x="228" y="118" width="184" height="214" rx="28" fill="#F8FAFC"/>
-  <rect x="260" y="88" width="120" height="50" rx="18" fill="#2563EB"/>
-  <path d="M280 192C280 156 360 156 360 192C360 228 280 236 280 280H360" stroke="#EF4444" stroke-width="22" stroke-linecap="round"/>
-  <path d="M196 310H446" stroke="#CBD5E1" stroke-width="16" stroke-linecap="round"/>
-  <text x="72" y="392" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="30" font-weight="700">Oils &amp; Fluids</text>
-</svg>

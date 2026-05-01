@@ -1,0 +1,11 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="480" rx="36" fill="#E2E8F0"/>
+  <rect x="48" y="48" width="544" height="384" rx="28" fill="#0F172A"/>
+  <circle cx="320" cy="240" r="132" fill="#111827" stroke="#CBD5E1" stroke-width="34"/>
+  <circle cx="320" cy="240" r="52" fill="#94A3B8"/>
+  <path d="M320 124V356" stroke="#CBD5E1" stroke-width="16" stroke-linecap="round"/>
+  <path d="M204 240H436" stroke="#CBD5E1" stroke-width="16" stroke-linecap="round"/>
+  <path d="M246 164L394 316" stroke="#CBD5E1" stroke-width="16" stroke-linecap="round"/>
+  <path d="M394 164L246 316" stroke="#CBD5E1" stroke-width="16" stroke-linecap="round"/>
+  <text x="72" y="392" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="30" font-weight="700">Tire Collection</text>
+</svg>

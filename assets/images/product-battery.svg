@@ -1,0 +1,12 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="480" rx="36" fill="#E2E8F0"/>
+  <rect x="48" y="48" width="544" height="384" rx="28" fill="#111827"/>
+  <rect x="168" y="154" width="304" height="164" rx="28" fill="#F8FAFC"/>
+  <rect x="216" y="126" width="64" height="38" rx="12" fill="#CBD5E1"/>
+  <rect x="360" y="126" width="64" height="38" rx="12" fill="#CBD5E1"/>
+  <path d="M254 234H298" stroke="#EF4444" stroke-width="18" stroke-linecap="round"/>
+  <path d="M276 212V256" stroke="#EF4444" stroke-width="18" stroke-linecap="round"/>
+  <path d="M352 234H398" stroke="#2563EB" stroke-width="18" stroke-linecap="round"/>
+  <path d="M442 194L494 168" stroke="#EF4444" stroke-width="14" stroke-linecap="round"/>
+  <text x="72" y="392" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="30" font-weight="700">Battery &amp; Power</text>
+</svg>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveX Spares | Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body data-page="shop">
+  <div id="siteHeader"></div>
+  <div class="toast-shell" id="toastShell"></div>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <div class="page-banner-box">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Shop</li>
+            </ol>
+          </nav>
+          <h1 class="display-font mb-2">Shop Car Spare Parts</h1>
+          <p class="mb-0">Filter by category, brand, or budget and explore parts in a professional catalog grid.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad pt-4">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-3">
+            <div class="filters-card position-sticky" style="top: 120px;">
+              <h5 class="mb-4">Filters</h5>
+              <div class="mb-3">
+                <label class="form-label">Category</label>
+                <select class="form-select" id="categoryFilter"></select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Brand</label>
+                <select class="form-select" id="brandFilter"></select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label d-flex justify-content-between"><span>Max Price</span><span id="priceValue">$250</span></label>
+                <input type="range" class="form-range" id="priceFilter" min="20" max="250" value="250">
+              </div>
+              <div class="p-3 rounded-4 bg-light">
+                <small class="text-muted-soft">Tip</small>
+                <p class="mb-0">Use the automotive categories to jump straight into brakes, tires, oils, and engine essentials.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="filters-card mb-4">
+              <div class="row g-3 align-items-center">
+                <div class="col-md-7">
+                  <h4 class="mb-1 display-font">Catalog View</h4>
+                  <p class="mb-0 text-muted-soft" id="shopResultCount">0 parts found</p>
+                </div>
+                <div class="col-md-5">
+                  <label class="form-label">Sort By</label>
+                  <select class="form-select" id="sortFilter">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row g-4" id="shopGrid"></div>
+            <nav class="mt-4">
+              <ul class="pagination justify-content-center" id="shopPagination"></ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/app.js"></script>
+  <script>
+    $("#priceFilter").on("input", function () {
+      $("#priceValue").text("$" + $(this).val());
+    });
+  </script>
+</body>
+</html>

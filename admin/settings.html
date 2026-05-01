@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveX Admin | Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="../assets/css/admin.css" rel="stylesheet">
+</head>
+<body class="admin-layout" data-admin-page="settings">
+  <div class="admin-shell">
+    <div id="adminSidebar"></div>
+    <div class="admin-main">
+      <div id="adminTopbar"></div>
+      <main class="admin-content">
+        <section class="admin-page-hero mb-4">
+          <h1 class="display-font mb-2">Store Settings</h1>
+          <p class="mb-0 text-soft">General contact and store metadata form for the static admin experience.</p>
+        </section>
+
+        <section class="admin-card">
+          <form id="settingsForm">
+            <div class="settings-grid">
+              <div>
+                <label class="form-label">Store Name</label>
+                <input type="text" class="form-control" id="storeName">
+              </div>
+              <div>
+                <label class="form-label">Support Email</label>
+                <input type="email" class="form-control" id="storeEmail">
+              </div>
+              <div>
+                <label class="form-label">Phone</label>
+                <input type="text" class="form-control" id="storePhone">
+              </div>
+              <div>
+                <label class="form-label">Currency</label>
+                <input type="text" class="form-control" id="storeCurrency">
+              </div>
+              <div>
+                <label class="form-label">Order Prefix</label>
+                <input type="text" class="form-control" id="orderPrefix">
+              </div>
+              <div>
+                <label class="form-label">Address</label>
+                <input type="text" class="form-control" id="storeAddress">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-danger rounded-pill px-4 mt-4">Save Settings</button>
+            <div id="settingsFeedback"></div>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/data.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

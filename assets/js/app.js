@@ -1,9 +1,12 @@
 (function ($) {
   const data = window.SparesData || {};
   const storageKey = "spares_cart";
-  const assetBase = "../assets/images/";
   const body = $("body");
   const currentPage = body.data("page") || "";
+  const isHome = currentPage === "home";
+  const rootPrefix = isHome ? "" : "../";
+  const frontendPrefix = isHome ? "frontend/" : "";
+  const assetBase = rootPrefix + "assets/images/";
   const pageState = {
     shopPage: 1,
     perPage: 6
@@ -159,10 +162,10 @@
 
   function headerTemplate() {
     const navItems = [
-      { key: "home", label: "Home", href: "index.html" },
-      { key: "shop", label: "Shop", href: "shop.html" },
-      { key: "about", label: "About", href: "about.html" },
-      { key: "contact", label: "Contact", href: "contact.html" }
+      { key: "home", label: "Home", href: rootPrefix + "index.html" },
+      { key: "shop", label: "Shop", href: frontendPrefix + "shop.html" },
+      { key: "about", label: "About", href: frontendPrefix + "about.html" },
+      { key: "contact", label: "Contact", href: frontendPrefix + "contact.html" }
     ];
 
     const links = navItems
@@ -182,7 +185,7 @@
       '<header class="site-header">',
       '<nav class="navbar navbar-expand-xl py-3">',
       '<div class="container align-items-center">',
-      '<a class="navbar-brand d-flex align-items-center gap-3" href="index.html">',
+      '<a class="navbar-brand d-flex align-items-center gap-3" href="' + rootPrefix + 'index.html">',
       '<img src="' + asset("logo-mark.svg") + '" alt="DriveX Spares" class="brand-mark">',
       '<div><span class="fw-bold fs-4 text-dark display-font">DriveX</span><div class="small text-muted-soft">Performance Spares</div></div>',
       "</a>",
@@ -192,9 +195,9 @@
       '<ul class="navbar-nav ms-xl-4">' + links + "</ul>",
       '<div class="ms-xl-auto d-flex flex-column flex-xl-row align-items-xl-center gap-3 mt-3 mt-xl-0">',
       '<div class="search-shell w-100"><i class="fa-solid fa-magnifying-glass"></i><input type="search" class="form-control" placeholder="Search filters, brakes, oils, accessories"></div>',
-      '<a href="shop.html" class="btn btn-outline-dark rounded-pill px-4"><i class="fa-solid fa-layer-group me-2"></i>Categories</a>',
-      '<a href="cart.html" class="icon-btn position-relative"><i class="fa-solid fa-cart-shopping"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">0</span></a>',
-      '<a href="login.html" class="btn btn-danger rounded-pill px-4"><i class="fa-regular fa-user me-2"></i>Login</a>',
+      '<a href="' + frontendPrefix + 'shop.html" class="btn btn-outline-dark rounded-pill px-4"><i class="fa-solid fa-layer-group me-2"></i>Categories</a>',
+      '<a href="' + frontendPrefix + 'cart.html" class="icon-btn position-relative"><i class="fa-solid fa-cart-shopping"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">0</span></a>',
+      '<a href="' + frontendPrefix + 'login.html" class="btn btn-danger rounded-pill px-4"><i class="fa-regular fa-user me-2"></i>Login</a>',
       "</div>",
       "</div>",
       "</div>",
@@ -213,8 +216,8 @@
       '<p class="mb-4">A polished static storefront and admin experience for car spare parts, designed around speed, trust, and easy catalog browsing.</p>',
       '<div class="d-flex gap-2"><a class="social-link" href="#"><i class="fa-brands fa-facebook-f"></i></a><a class="social-link" href="#"><i class="fa-brands fa-instagram"></i></a><a class="social-link" href="#"><i class="fa-brands fa-linkedin-in"></i></a></div>',
       "</div>",
-      '<div class="col-sm-6 col-lg-2"><h6 class="mb-3">Store</h6><div class="d-grid gap-2"><a href="shop.html">Shop Parts</a><a href="product.html?id=1">Featured Product</a><a href="cart.html">Cart</a><a href="checkout.html">Checkout</a></div></div>',
-      '<div class="col-sm-6 col-lg-3"><h6 class="mb-3">Support</h6><div class="d-grid gap-2"><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="login.html">Account Access</a><a href="../admin/dashboard.html">Admin Demo</a></div></div>',
+      '<div class="col-sm-6 col-lg-2"><h6 class="mb-3">Store</h6><div class="d-grid gap-2"><a href="' + frontendPrefix + 'shop.html">Shop Parts</a><a href="' + frontendPrefix + 'product.html?id=1">Featured Product</a><a href="' + frontendPrefix + 'cart.html">Cart</a><a href="' + frontendPrefix + 'checkout.html">Checkout</a></div></div>',
+      '<div class="col-sm-6 col-lg-3"><h6 class="mb-3">Support</h6><div class="d-grid gap-2"><a href="' + frontendPrefix + 'about.html">About Us</a><a href="' + frontendPrefix + 'contact.html">Contact</a><a href="' + frontendPrefix + 'login.html">Account Access</a><a href="' + rootPrefix + 'admin/dashboard.html">Admin Demo</a></div></div>',
       '<div class="col-lg-3"><h6 class="mb-3">Contact</h6><div class="d-grid gap-2"><span><i class="fa-solid fa-location-dot me-2"></i>Main Shahrah-e-Faisal, Karachi</span><span><i class="fa-solid fa-envelope me-2"></i>support@drivexspares.com</span><span><i class="fa-solid fa-phone me-2"></i>+92 300 4445500</span></div></div>',
       "</div>",
       '<div class="border-top border-light border-opacity-10 mt-4 pt-4 d-flex flex-column flex-md-row justify-content-between gap-2">',
@@ -232,18 +235,18 @@
       '<div class="product-card">',
       '<div class="product-media">',
       '<span class="product-badge">' + product.badge + "</span>",
-      '<a href="product.html?id=' + product.id + '"><img src="' + asset(product.image) + '" alt="' + product.name + '"></a>',
+      '<a href="' + frontendPrefix + 'product.html?id=' + product.id + '"><img src="' + asset(product.image) + '" alt="' + product.name + '"></a>',
       "</div>",
       '<div class="card-body">',
       '<div class="product-meta mb-2"><span class="text-uppercase">' + product.brand + "</span><span>•</span><span>" + product.category + "</span></div>",
-      '<h3 class="card-title"><a class="text-dark" href="product.html?id=' + product.id + '">' + product.name + "</a></h3>",
+      '<h3 class="card-title"><a class="text-dark" href="' + frontendPrefix + 'product.html?id=' + product.id + '">' + product.name + "</a></h3>",
       '<p class="text-muted-soft mb-3">' + product.shortDescription + "</p>",
       '<div class="d-flex align-items-center justify-content-between mb-3">',
       '<div class="rating-stars small">' + renderStars(product.rating) + ' <span class="text-muted-soft ms-1">(' + product.reviews + ")</span></div>",
       '<span class="discount-pill">' + getDiscount(product) + "% Off</span>",
       "</div>",
       '<div class="price-row mb-3"><span class="current">' + formatCurrency(product.price) + '</span><span class="old">' + formatCurrency(product.oldPrice) + "</span></div>",
-      '<div class="d-flex gap-2"><a href="product.html?id=' + product.id + '" class="btn btn-outline-dark flex-grow-1 rounded-pill">View Details</a><button class="btn btn-danger rounded-pill px-4 add-to-cart-btn" data-product-id="' + product.id + '"><i class="fa-solid fa-cart-plus"></i></button></div>',
+      '<div class="d-flex gap-2"><a href="' + frontendPrefix + 'product.html?id=' + product.id + '" class="btn btn-outline-dark flex-grow-1 rounded-pill">View Details</a><button class="btn btn-danger rounded-pill px-4 add-to-cart-btn" data-product-id="' + product.id + '"><i class="fa-solid fa-cart-plus"></i></button></div>',
       "</div>",
       "</div>",
       "</div>"
@@ -273,7 +276,7 @@
         .map(function (category) {
           return [
             '<div class="col-md-6 col-xl-4 reveal-up">',
-            '<a href="shop.html?category=' + category.id + '" class="category-card d-block text-dark">',
+            '<a href="' + frontendPrefix + 'shop.html?category=' + category.id + '" class="category-card d-block text-dark">',
             '<div class="category-icon mb-3"><i class="fa-solid ' + category.icon + '"></i></div>',
             "<h5>" + category.label + "</h5>",
             '<p class="text-muted-soft mb-0">' + category.description + "</p>",
@@ -437,7 +440,7 @@
       return;
     }
     if (!detailedCart.length) {
-      $("#cartItems").html('<div class="empty-state"><h4>Your cart is empty</h4><p class="text-muted-soft mb-3">Browse the spare parts catalog and add items to continue.</p><a href="shop.html" class="btn btn-danger rounded-pill px-4">Start Shopping</a></div>');
+      $("#cartItems").html('<div class="empty-state"><h4>Your cart is empty</h4><p class="text-muted-soft mb-3">Browse the spare parts catalog and add items to continue.</p><a href="' + frontendPrefix + 'shop.html" class="btn btn-danger rounded-pill px-4">Start Shopping</a></div>');
       $("#cartSummary").html("");
       return;
     }
@@ -468,7 +471,7 @@
         '<div class="summary-line"><span>Shipping</span><strong>' + (shippingCost() === 0 ? "Free" : formatCurrency(shippingCost())) + "</strong></div>",
         '<div class="summary-line"><span>Tax</span><strong>' + formatCurrency(taxAmount()) + "</strong></div>",
         '<hr><div class="summary-line summary-total"><span>Total</span><strong>' + formatCurrency(grandTotal()) + "</strong></div>",
-        '<a href="checkout.html" class="btn btn-danger w-100 rounded-pill mt-4">Proceed to Checkout</a>',
+        '<a href="' + frontendPrefix + 'checkout.html" class="btn btn-danger w-100 rounded-pill mt-4">Proceed to Checkout</a>',
         "</div>"
       ].join("")
     );
